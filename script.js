@@ -1,25 +1,21 @@
-let h1 = document.querySelector("h1");
-
-
-function changeColor(color,delay){
+function savetoDb(data){
     return new Promise((resolve,reject)=>{
-        setTimeout(()=>{
-        h1.style.color = color;
-        resolve("Color changed!");
-    },delay);
-    })  
+        let internetSpeed = (Math.floor(Math.random()*10)+1);
+    if(internetSpeed > 4){
+        resolve("Success : the data saved..");
+    }
+    else{
+        reject("Failure: weak connection..")
+    }
+    })
 }
 
 
-changeColor("red",1000).then((msg)=>{
-    console.log("Success: Color changed to red ..")
-    return changeColor("orange",1000);
-}).then((msg)=>{
-    console.log("Success: Color changed to orange ..")
-    return changeColor("blue",1000);
-}).then((msg)=>{
-    console.log("Success: Color changed to blue..")
+let request = savetoDb("Akash_zone..");
+
+request.then((Success)=>{
+    console.log("The DataSaved in DB" , Success);
 })
 .catch((error)=>{
-    console.log("Failure: Color not-changed!")
+    console.log("Weak connection, Check your internet connection..")
 })
