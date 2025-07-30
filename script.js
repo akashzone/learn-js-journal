@@ -1,21 +1,30 @@
-function savetoDb(data){
-    return new Promise((resolve,reject)=>{
-        let internetSpeed = (Math.floor(Math.random()*10)+1);
-    if(internetSpeed > 4){
-        resolve("Success : the data saved..");
-    }
-    else{
-        reject("Failure: weak connection..")
-    }
-    })
-}
+// Async and Await Keywords..
 
 
-let request = savetoDb("Akash_zone..");
+// async function demo(){
+//     // return "Hii, Im akash.."
+// }
 
-request.then((Success)=>{
-    console.log("The DataSaved in DB" , Success);
-})
-.catch((error)=>{
-    console.log("Weak connection, Check your internet connection..")
-})
+
+// let greet = async () =>{
+//   return "Hiii..."
+// };
+
+
+// function getNum(){
+//     return new Promise((resolve,reject)=>{
+//         let randomNum = Math.floor(Math.random()*5)+1;
+//         setTimeout(() => {
+//             console.log(randomNum);
+//             resolve(randomNum);
+//         }, 1000);
+//     });
+// }
+
+// async function demo() {
+//     await getNum()
+//     await getNum();
+//     await getNum();
+//     await getNum();
+// }
+
