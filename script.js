@@ -47,3 +47,26 @@
 //     console.log(err);
 // })
 
+
+let url = "https://catfact.ninja/fact";
+let btn = document.querySelector("button");
+
+btn.addEventListener("click",async ()=>{
+    let fact = await getFacts();
+    let p = document.querySelector(".result");
+    p.innerText = fact;
+})
+
+
+async function getFacts(){
+    try{
+        let res = await axios.get(url);
+        console.log(res.data.fact);
+        return res.data.fact;
+    }
+    catch{
+        return "No fact found!"
+    }   
+}
+
+
